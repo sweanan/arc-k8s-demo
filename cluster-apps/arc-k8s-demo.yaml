@@ -6,7 +6,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ubuntu
+      app: ubuntulatest
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ubuntu
+        app: ubuntulatest
     spec:
       nodeSelector:
         kubernetes.io/arch: amd64
@@ -39,12 +39,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ubuntu
+  name: ubuntulatest
   labels:
-    name: ubuntu
+    name: ubuntulatest
 spec:
   type: ClusterIP
   ports:
   - port: 8080
   selector:
-    app: ubuntu
+    app: ubuntulatest

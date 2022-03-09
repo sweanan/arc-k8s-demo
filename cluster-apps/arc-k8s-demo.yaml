@@ -1,50 +1,25 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ubuntulatest
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: ubuntulatest
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  minReadySeconds: 5 
-  template:
-    metadata:
-      labels:
-        app: ubuntulatest
-    spec:
-      nodeSelector:
-        kubernetes.io/arch: amd64
-        kubernetes.io/os: linux
-      containers:
-      - name: ubuntulatest
-        image: ubuntu:latest
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: "50Mi"
-            cpu: "125m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
-
----
-
 apiVersion: v1
-kind: Service
+
+kind: Pod
+
 metadata:
-  name: ubuntulatest
+
+  name: ubuntu
+
   labels:
-    name: ubuntulatest
+
+    app: ubuntu
+
 spec:
-  type: ClusterIP
-  ports:
-  - port: 8080
-  selector:
-    app: ubuntulatest
+
+  containers:
+
+  - name: ubuntu
+
+    image: ubuntu:latest
+
+    command: ["/bin/sleep", "3650d"]
+
+    imagePullPolicy: IfNotPresent
+
+  restartPolicy: Always

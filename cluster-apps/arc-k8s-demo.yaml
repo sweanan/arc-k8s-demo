@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: arc-k8s-demo1
+  name: ubuntu
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: arc-k8s-demo1
+      app: ubuntu
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -15,13 +15,13 @@ spec:
   template:
     metadata:
       labels:
-        app: arc-k8s-demo1
+        app: ubuntu
     spec:
       nodeSelector:
         kubernetes.io/arch: amd64
         kubernetes.io/os: linux
       containers:
-      - name: arc-k8s-demo1
+      - name: ubuntu
         image: ubuntu:latest
         imagePullPolicy: IfNotPresent
         ports:
@@ -39,12 +39,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: arc-k8s-demo1
+  name: ubuntu
   labels:
-    name: arc-k8s-demo1
+    name: ubuntu
 spec:
   type: ClusterIP
   ports:
   - port: 8080
   selector:
-    app: arc-k8s-demo1
+    app: ubuntu

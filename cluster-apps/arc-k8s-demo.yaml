@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: team-bc
-  namespace: team-bc
+  name: team-b
+  namespace: team-b
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: team-bc
+      app: team-b
   template:
     metadata:
       labels:
-        app: team-bc
+        app: team-b
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
-      - name: team-bc
-        image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+      - name: team-b
+        image: mcr.microsoft.com/oss/bitnami/redis:6.0.9
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"

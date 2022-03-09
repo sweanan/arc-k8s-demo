@@ -16,7 +16,7 @@ spec:
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
-      - name: team-b
+      - name: team-bc
         image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
         env:
         - name: ALLOW_EMPTY_PASSWORD

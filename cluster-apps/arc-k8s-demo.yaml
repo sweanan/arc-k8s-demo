@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: team-b
-  namespace: team-b
+  name: team-bc
+  namespace: team-bc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: team-b
+      app: team-bc
   template:
     metadata:
       labels:
-        app: team-b
+        app: team-bc
     spec:
       nodeSelector:
         "kubernetes.io/os": linux

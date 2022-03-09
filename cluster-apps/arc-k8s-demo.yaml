@@ -21,7 +21,7 @@ spec:
         kubernetes.io/arch: amd64
         kubernetes.io/os: linux
       containers:
-      - name: ubuntu
+      - name: ubuntulatest
         image: ubuntu:latest
         imagePullPolicy: IfNotPresent
         ports:

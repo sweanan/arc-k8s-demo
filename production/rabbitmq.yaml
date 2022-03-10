@@ -12,8 +12,8 @@ spec:
   values:
     image:
       repository: sweanan/arc-k8s-demo
-      tag: latest
-    replicaCount: 1
+      tag: production
+    replicaCount: 2
     env:
       name: MESSAGE
       value: Azure Arc enabled K8s GitOps Demo!

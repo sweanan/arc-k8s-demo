@@ -11,8 +11,9 @@ spec:
     ref: main
   values:
     image:
-      repository: sweanan/arc-k8s-demo
-      tag: 0
+      registry: docker.io
+      repository: bitnami/rabbitmq
+      tag: 3.9.13-debian-10-r38
     replicaCount: 1
     env:
       name: MESSAGE

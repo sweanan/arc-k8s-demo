@@ -2,16 +2,16 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: rabbitmq
-  namespace: prod
+  namespace: production
 spec:
   releaseName: rabbitmq-prod
   chart:
     git: https://github.com/sweanan/arc-k8s-demo.git
     path: helm/rabbitmq
-    ref: master
+    ref: main
   values:
     image:
-      repository: liorkamrat/hello-arc
+      repository: sweanan/arc-k8s-demo
       tag: latest
     replicaCount: 1
     env:

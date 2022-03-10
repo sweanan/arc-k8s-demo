@@ -4,7 +4,7 @@ metadata:
   name: rabbitmq
   namespace: production
 spec:
-  releaseName: rabbitmq
+  releaseName: rabbitmq-0
   chart:
     git: https://github.com/sweanan/arc-k8s-demo.git
     path: ./helm/rabbitmq
@@ -12,7 +12,7 @@ spec:
   values:
     image:
       repository: sweanan/arc-k8s-demo
-      tag: latest
+      tag: 0
     replicaCount: 1
     env:
       name: MESSAGE

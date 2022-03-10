@@ -4,10 +4,10 @@ metadata:
   name: rabbitmq
   namespace: production
 spec:
-  releaseName: rabbitmq-prod
+  releaseName: rabbitmq
   chart:
     git: https://github.com/sweanan/arc-k8s-demo.git
-    path: helm/rabbitmq
+    path: ./helm/rabbitmq
     ref: main
   values:
     image:

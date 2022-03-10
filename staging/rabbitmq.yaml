@@ -4,7 +4,7 @@ metadata:
   name: rabbitmq
   namespace: staging
 spec:
-  releaseName: staging-0
+  releaseName: staging-1
   chart:
     git: https://github.com/sweanan/arc-k8s-demo.git
     path: ./helm/rabbitmq

@@ -6,8 +6,8 @@ metadata:
 spec:
   releaseName: rabbitmq-production
   chart:
-    git: https://github.com/sweanan/arc-k8s-demo.git
-    path: ./helm/rabbitmq
+    git: git@github.com:sweanan/arc-k8s-demo.git
+    path: helm/rabbitmq
     ref: main
   values:
     image:

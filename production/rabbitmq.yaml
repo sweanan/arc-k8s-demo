@@ -1,0 +1,19 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: rabbitmq
+  namespace: prod
+spec:
+  releaseName: rabbitmq-prod
+  chart:
+    git: https://github.com/sweanan/arc-k8s-demo.git
+    path: helm/rabbitmq
+    ref: master
+  values:
+    image:
+      repository: liorkamrat/hello-arc
+      tag: latest
+    replicaCount: 1
+    env:
+      name: MESSAGE
+      value: Azure Arc enabled K8s GitOps Demo!
